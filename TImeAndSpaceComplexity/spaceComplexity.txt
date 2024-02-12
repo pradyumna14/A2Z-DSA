@@ -1,0 +1,21 @@
+//Space COmplexity
+
+Its the memory space that your programme takes!
+Memory dpace depends on system to system!
+
+notation for SC is also Big-Oh notation
+
+Definition: 
+
+Auxilary Space (space that u take to solve the problem)
++
+Input Space (Space that u to take the input)
+
+Example(Pseudo=club):
+
+input A and Input B
+C=A+B
+Auxilary Space: C (If we use extra variable/extra space to solve the problem then that is called auxilary space)
+Input Space: A and B are the input Space..
+
+Now SC: O(3)
