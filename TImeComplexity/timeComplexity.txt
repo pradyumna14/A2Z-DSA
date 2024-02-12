@@ -1,0 +1,136 @@
+Lets say a code you write takes 2 seconds to execute, while with some changes in the code, the code might take 5 seconds or even 7 seconds on the machine!
+
+But note that: "Time Taken is NOT the Time Complexity"
+
+Lets say we take 1 program and run it in the old windows 7 computer and running the same code in the windows 11 software.
+code will take 3 sec(say) to run in the older system whereas 1s in the new system!
+
+HENCE, depending on the system the code will take different time to execute!
+
+
+
+HENCE, time taken != time Complexity
+But
+
+Time complexity is: The rate at which the time taken increases with respect to the input size rather.
+
+
+The time complexity is not measured in seconds or in minutes but its notion is:
+Big-Oh  Notation!
+
+Big-Oh notation has a syntax: 
+O(timeTaken)
+
+lets calculate the time complexity of a simple code, lets take the example of loop:
+
+for (i=1; i<=3; i++){
+    cout << "Raj";
+}
+what is the Big-Oh of this program:
+>> number of steps the programme will take!
+step 1, assigning i=1;
+step 2, cheking condition,
+step 3, executing Raj
+step 4, i++
+step 5, checking condition
+step 6, executing Raj
+step 7, i++
+step 8, checking condition
+step 9, executing Raj
+step 10, i++
+step 11, checking condition
+step 12, exit the scope!
+
+hence the Big-Oh notation is: O(12)
+
+TRICK: here the code runs/iterates 3 times (<=3) and at every iteration 3 steps are done(incrementing, checking, printing)
+hence O(3*3)=O(9) is the notation. math ko O(12) ta error raixa mero!
+
+for (i=1; i<=N; i++){
+    cout << "Raj";
+}
+O(N*3)
+
+
+You cant mannually calculate time complexity like this, soo some formula comes in play now!
+
+CASE 1: TC to be computed in terms of worst case senario
+CASE 2: Avoid constants
+CASE 3: Avoid lower values
+
+CASE 1:
+there are 3 seniarios
+Worst case, Average Case, Best Case!
+
+
+if(marks<25) cout <<"Grade D"
+else if(marks<45) cout << "Grade C"
+else if(marks<65) cout << "Grade B"
+else cout << "Grade A"
+
+if INPUT: 20
+>> O(2)
+if INPUT: 90
+>> O(~4)
+
+soo depending on the input the TC varies, lesser the TC its the best case, but more the steps, the time complexity increases and its a worst case. Average case=(Best+Worst)/2 
+Soo what is the time camplexity of this programme?
+>> we know that from the CASE !, we calculate the TC in the worst case senario, hence the TC here is O(~4)
+
+CASE 2:
+Avoid Constants
+O(A^15+2)
+Here +2 wont have any significance hence we dont consider it! 1 million kamauxas rey tailey and talai 1rs ko coin diya bhaney it wont have any much significance!
+
+CASE 3:
+Avoid lower values
+O(A^15+A^2+4)
+Here the A^2 wont carry any much significance as the A^15 is such a large value, adding a smaller value wont create that big impact soo we avoid while calculating the Big-Oh notation!
+
+
+
+
+QUESTION:
+
+
+for (int i=0; i<N; i++)
+{
+for (int j=0; j<N; j++)
+    {
+     |Block of code|
+    }
+}
+
+i=1   [j=0,1,2......N-1]
+i=2   [j=0,1,2......N-1]
+i=0   [j=0,1,2......N-1]
+.  
+.
+i=N-1 [j=0,1,2......N-1]
+
+O(N*N)>> O(N^2) is the answer.
+bhitra ko i++. i<N, j++ yo sabai lai we dont consider as they are all constants! we are only taking overall iterations!
+
+Question 2:
+
+for (int i=0; i<N; i++)
+{
+for (int j=0; j<i; j++)
+    {
+     |Block of code|
+    }
+}
+
+i=0   [j=0]                1 iteration
+i=1   [j=0,1]              2(0,1) iterations
+i=2   [j=0,1,2]            3 iterations
+.                          .
+.                          .
+i=N-1 [j=0,1,2......N-1]    
+
+(1+2+3+4+....n)
+The is the formula of N natural number:
+N*(N+1)/2
+=N^2/2 + N/2
+we neglect N/2 as it is the lower value
+hence the TC is: O(N^2/2)
