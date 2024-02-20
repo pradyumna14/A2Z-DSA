@@ -1,3 +1,3 @@
 # A2Z-DSA
 
-Striver!
+Striver's course from take you forward!
